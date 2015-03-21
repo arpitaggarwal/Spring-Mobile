@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN" "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+
+<tiles-definitions>
+
+	<!-- Default Main Template -->
+	<definition name=".mainTemplate" template="/templates/menu.jsp">
+		<put-attribute name="title" value="Title Section - Hello Tile!!"
+			type="string" />
+		<put-attribute name="header" value="/templates/header.jsp" />
+		<put-attribute name="footer" value="/templates/footer.jsp" />
+		<put-attribute name="body" value="" />
+	</definition>
+
+	<!-- When we call firstpage from Controller, it will be resolved as : menu.jsp 
+		with index.jsp as body section of it -->
+
+	<!-- FOR DESKTOP -->
+	<definition name="firstPage" extends=".mainTemplate">
+		<put-attribute name="body" value="/templates/index.jsp" />
+	</definition>
+
+	<!-- FOR MOBILE -->
+	<definition name="firstPage/mobile" extends=".mainTemplate">
+		<put-attribute name="body" value="/templates/index-mobile.jsp" />
+	</definition>
+
+	<!-- FOR TABLET -->
+	<definition name="firstPage/tablet" extends=".mainTemplate">
+		<put-attribute name="body" value="/templates/index-tablet.jsp" />
+	</definition>
+
+</tiles-definitions>
